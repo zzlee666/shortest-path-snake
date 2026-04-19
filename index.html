@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最短路径贪吃蛇</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="play-zone" aria-label="游戏区域">
+      <div class="top-bar">
+        <div>
+          <p class="eyebrow">Pixel Snake</p>
+          <h1>最短路径贪吃蛇</h1>
+        </div>
+        <div class="level-chip" id="levelChip">1 / 5</div>
+      </div>
+
+      <div class="game-frame">
+        <canvas id="gameCanvas" width="576" height="448" aria-label="像素贪吃蛇棋盘"></canvas>
+      </div>
+
+      <div class="touch-pad" aria-label="方向控制">
+        <button class="icon-button spacer" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="icon-button" type="button" data-dir="up" title="向上" aria-label="向上">↑</button>
+        <button class="icon-button spacer" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="icon-button" type="button" data-dir="left" title="向左" aria-label="向左">←</button>
+        <button class="icon-button" type="button" data-dir="down" title="向下" aria-label="向下">↓</button>
+        <button class="icon-button" type="button" data-dir="right" title="向右" aria-label="向右">→</button>
+      </div>
+    </section>
+
+    <aside class="side-panel" aria-label="关卡状态">
+      <div class="score-strip">
+        <div>
+          <span>步数</span>
+          <strong id="moveCount">0</strong>
+        </div>
+        <div>
+          <span>最佳</span>
+          <strong id="bestCount">0</strong>
+        </div>
+        <div>
+          <span>金币</span>
+          <strong id="coinCount">0</strong>
+        </div>
+      </div>
+
+      <div class="level-title">
+        <p id="levelFruit">苹果</p>
+        <h2 id="levelName">关卡一</h2>
+      </div>
+
+      <p class="status-line" id="statusLine">准备</p>
+
+      <div class="command-row">
+        <button class="action-button" type="button" id="prevLevel" title="上一关" aria-label="上一关">‹</button>
+        <button class="action-button text-action" type="button" id="resetLevel">重开</button>
+        <button class="action-button" type="button" id="nextLevel" title="下一关" aria-label="下一关">›</button>
+      </div>
+
+      <div class="level-list" id="levelList" aria-label="关卡列表"></div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
